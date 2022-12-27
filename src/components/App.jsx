@@ -77,7 +77,7 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    // console.log('моунт додатка');
+    // console.log('маунт додатка');
 
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
@@ -118,11 +118,11 @@ export class App extends Component {
 
     return (
       <Container>
-        <button type="button" onClick={this.toggleModal}>
+        {/* <button type="button" onClick={this.toggleModal}>
           Open modal
         </button>
 
-        {/* {showModal && (
+        {showModal && (
           <Modal onClose={this.toggleModal}>
             <h1>Hello, this is content</h1>
             <p>
