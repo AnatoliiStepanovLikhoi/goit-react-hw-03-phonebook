@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
-import { Modal } from './Modal/Modal';
 
+// import { Modal } from './Modal/Modal';
 // import { PropTypes } from 'prop-types';
 // import { nanoid } from 'nanoid';
+
 import { capitalizeFirstLetters } from './Utils/capitalizeFirstLetters';
 
 import { Container, MainTitle, SecondaryTitle } from './App.styled';
@@ -22,8 +23,7 @@ export class App extends Component {
     filter: '',
     // name: '',
     // number: '',
-
-    showModal: false,
+    // showModal: false,
   };
 
   checkTheSameName = inputName => {
@@ -98,15 +98,17 @@ export class App extends Component {
     }
   }
 
-  toggleModal = () => {
-    // console.log('закриває');
-    this.setState(({ showModal }) => ({
-      showModal: !showModal,
-    }));
-  };
+  // toggleModal = () => {
+  //   // console.log('закриває');
+  //   this.setState(({ showModal }) => ({
+  //     showModal: !showModal,
+  //   }));
+  // };
 
   render() {
-    const { contacts, filter, showModal } = this.state;
+    const { contacts, filter } = this.state;
+
+    // const { contacts, filter, showModal } = this.state;
     // console.log(contacts);
     // console.log(filter);
 
@@ -120,7 +122,7 @@ export class App extends Component {
           Open modal
         </button>
 
-        {showModal && (
+        {/* {showModal && (
           <Modal onClose={this.toggleModal}>
             <h1>Hello, this is content</h1>
             <p>
@@ -132,7 +134,7 @@ export class App extends Component {
               Close
             </button>
           </Modal>
-        )}
+        )} */}
 
         <MainTitle>Phonebook</MainTitle>
         <ContactForm onFormSubmit={this.onContactFormSubmit} />
